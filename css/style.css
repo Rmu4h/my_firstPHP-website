@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    /*background-color: ;*/
+}
+
+body {
+    background-color: #2d617a !important;
+}
+
+.wrapper {
+    width: 75%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.header__menu {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    padding-right: 10px;
+}
+
+.header__list {
+    display: flex;
+    gap: 10px;
+}
+
+.header__link {
+    text-decoration: none;
+    color: white;
+
+}
+
+p {
+    font-size: 16px;
+}
+
+h1  {
+    font-weight: 600;
+    font-size: 32px;
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+}
+
+.logo {
+    width: 120px;
+    height: 100px;
+}
+
+.index_info {
+    padding: 30px 0 0 30px;
+}
+
+.index_categories {
+    padding: 0 0 30px 30px;
+    margin: 16px 0;
+}
+
+.signup-form {
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.signup-form-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.login-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.fw-normal {
+    color: black;
+}
+
+.title-section {
+    /*justify-content: center;*/
+    text-align: center;
+
+}
