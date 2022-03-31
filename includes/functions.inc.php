@@ -28,8 +28,8 @@ function pwdMatch($pwd, $pwdRepeat) {
     return $pwd === $pwdRepeat;
 }
 
-function uidExists($conn, $username, $email) {
-    $sql = "SELECT * FROM users WHERE usersUid = ? || usersEmail = ?;";
+function uidExists($conn, $email) {
+    $sql = "SELECT * FROM users WHERE usersEmail = '$email';";
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -37,7 +37,7 @@ function uidExists($conn, $username, $email) {
         exit();
     }
 
-    mysqli_stmt_bind_param($stmt, "ss", $username, $email);
+    mysqli_stmt_bind_param($stmt, "ss", $email);
     mysqli_stmt_execute($stmt);
 
     $resultData = mysqli_stmt_get_result($stmt);
@@ -70,18 +70,32 @@ function createUser($conn, $name, $email, $username, $pwd) {
     exit();
 }
 
+function getUserImage() {
+    include "dbh.inc.php";
+
+    $result = "";
+    if (!empty($_SESSION["userid"])) {
+        $userId  = $_SESSION["userid"];
+//        return false;
+        $result = $conn->query("SELECT image FROM users WHERE usersId = '$userId'")->fetch_array()['image'];
+    }
+
+//    var_dump($result);
+//    die;
+    return $result;
+}
+
 function emptyInputLogin($username, $pwd) {
-    $result;
+    $result = false;
     if (empty($username) || empty($pwd)) {
         $result = true;
-    } else {
-        $result = false;
     }
+
     return $result;
 }
 
 function loginUser($conn, $username, $pwd) {
-    $uidExists = uidExists($conn, $username, $username);
+    $uidExists = uidExists($conn, $username);
 
     if ($uidExists === false) {
         header("location: ../login.php?error=wronglogin");
@@ -98,6 +112,7 @@ function loginUser($conn, $username, $pwd) {
         session_start();
         $_SESSION["userid"] = $uidExists["usersId"];
         $_SESSION["useruid"] = $uidExists["usersUid"];
+        $_SESSION["useremail"] = $uidExists["usersEmail"];
         $_SESSION["usersname"] = $uidExists["usersName"];
 
         header("location: ../index.php");

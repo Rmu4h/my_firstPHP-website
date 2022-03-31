@@ -1,5 +1,8 @@
 <?php
     include_once 'header.php';
+    include 'includes/functions.inc.php'
+
+
 ?>
 
 
@@ -10,16 +13,25 @@
 
 
 
+
+                <div class="image-preview" id="imagePreview">
+                    <?php
+                        $image = base64_encode(getUserImage());
+
+                        if ($image) {
+                           echo ('<img src="data:image/jpg;charset=utf8;base64,'.$image.'" class="image-preview__image">');
+                         } else {
+                            echo ('<img src="https://www.bootdey.com/img/Content/avatar/avatar6.png" alt="..." class="image-preview__image">');
+                         }
+                    ?>
+                </div>
                 <form action="includes/upload-image.inc.php" method="post" enctype="multipart/form-data">
 
                     <label>Select Image File:</label>
                     <input type="file" name="image">
                     <input type="submit" name="submit" value="Upload">
-                    <input type="text" name="userid"  style="visibility: hidden" value="<?php $_SESSION["useruid"]  ?>">
+                    <input type="text" name="userid"  style="visibility: hidden" value="<?= $_SESSION["userid"] ?>">
                 </form>
-<!--                <div class="image-preview" id="imagePreview">-->
-<!--                    <img src="https://www.bootdey.com/img/Content/avatar/avatar6.png" alt="..." class="image-preview__image">-->
-<!--                </div>-->
 <!--                <div>-->
 <!--                    <label for="inpFiles" class="btn">Change photo</label>-->
 <!--                    <input id="inpFiles" style="visibility:hidden;" type="file" name="inpFile">-->
@@ -28,7 +40,7 @@
                 <div class="card-body p-1-9 p-xl-5">
                     <div class="mb-4">
                         <?php
-                            echo '<h3 class="h4 mb-0"> '. $_SESSION["useruid"] . "</h3>";
+                            echo '<h3 class="h4 mb-0"> '. $_SESSION["usersname"] . "</h3>";
                         ?>
                         <span class="text-primary">CEO &amp; Founder</span>
                     </div>

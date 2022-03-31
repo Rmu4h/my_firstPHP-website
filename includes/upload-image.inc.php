@@ -20,17 +20,14 @@ if(isset($_POST["submit"])){
             $imgContent = addslashes(file_get_contents($image));
 
             // Insert image content into database
-            $query = $userID;
-            //$query = "UPDATE users SET imagePath = '$imgContent' WHERE usersId = '$userID'";
-            var_dump($_POST);
-            die;
+            $query = "UPDATE users SET image = '$imgContent' WHERE usersId = '$userID'";
             $insert = $conn->query($query);
 
             if($insert){
                 $status = 'success';
                 $statusMsg = "File uploaded successfully.";
             }else{
-                $statusMsg = "File upload failed, please try again.";
+                $statusMsg = "File upload failed:" + $conn->error;
             }
         }else{
             $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.';
