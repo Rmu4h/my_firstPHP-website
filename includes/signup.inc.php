@@ -9,6 +9,7 @@ var_dump("test");
       $username = $_POST["uid"];
       $pwd = $_POST["pwd"];
       $pwdRepeat = $_POST["pwdrepeat"];
+      $imgPath = $_POST["imagepath"];
 
       require_once 'dbh.inc.php';
       require_once 'functions.inc.php';
@@ -35,7 +36,7 @@ var_dump("test");
           exit();
       }
 
-      createUser($conn, $name, $email, $username, $pwd);
+      createUser($conn, $name, $email, $username, $pwd, $imgPath);
         echo "It works";
         die;
   } else {

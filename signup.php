@@ -4,7 +4,7 @@
 
     <section class="signup-form">
         <h2>Sign Up</h2>
-        <div >
+        <div>
             <form action="includes/signup.inc.php" method="post" class="signup-form-form">
                 <input type="text" name="name" placeholder="Full name..." >
                 <input type="text" name="email" placeholder="Email...">
