@@ -45,7 +45,12 @@
                         <span class="text-primary">CEO &amp; Founder</span>
                     </div>
                     <ul class="list-unstyled mb-4">
-                        <li class="mb-3"><a href="#!"><i class="far fa-envelope display-25 me-3 text-secondary"></i>dakota@gmail.com</a></li>
+                        <li class="mb-3">
+                            <a href="#!">
+                                <i class="far fa-envelope display-25 me-3 text-secondary"></i><?=$_SESSION['useremail'] ?>
+                            </a>
+
+                        </li>
                         <li class="mb-3"><a href="#!"><i class="fas fa-mobile-alt display-25 me-3 text-secondary"></i>+012 (345) 6789</a></li>
                         <li><a href="#!"><i class="fas fa-map-marker-alt display-25 me-3 text-secondary"></i>205 Main Street, USA</a></li>
                     </ul>
