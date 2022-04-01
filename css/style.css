@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    /*background-color: ;*/
 }
 
 body {
@@ -95,12 +94,8 @@ h1  {
 }
 
 .title-section {
-    /*justify-content: center;*/
     text-align: center;
 }
-
-
-
 
 body{margin-top:20px;}
 .icon-box.medium {
@@ -182,10 +177,8 @@ p {
     margin-bottom: 1.6rem;
 }
 
-
-
 .image-preview__image {
-    max-height: 315px;
-    max-width: 315px;
-    margin-top: 30px;
+    height: 300px;
+    width: 350px;
+    margin: 30px 0 0 30px;
 }

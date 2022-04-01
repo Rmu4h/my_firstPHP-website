@@ -2,7 +2,6 @@
     include_once 'header.php';
     include 'includes/functions.inc.php'
 
-
 ?>
 
 
@@ -10,9 +9,6 @@
     <div class="row justify-content-center">
         <div class="col-md-7 col-lg-4 mb-5 mb-lg-0 wow fadeIn">
             <div class="card border-0 shadow">
-
-
-
 
                 <div class="image-preview" id="imagePreview">
                     <?php
@@ -32,10 +28,6 @@
                     <input type="submit" name="submit" value="Upload">
                     <input type="text" name="userid"  style="visibility: hidden" value="<?= $_SESSION["userid"] ?>">
                 </form>
-<!--                <div>-->
-<!--                    <label for="inpFiles" class="btn">Change photo</label>-->
-<!--                    <input id="inpFiles" style="visibility:hidden;" type="file" name="inpFile">-->
-<!--                </div>-->
 
                 <div class="card-body p-1-9 p-xl-5">
                     <div class="mb-4">
@@ -49,7 +41,6 @@
                             <a href="#!">
                                 <i class="far fa-envelope display-25 me-3 text-secondary"></i><?=$_SESSION['useremail'] ?>
                             </a>
-
                         </li>
                         <li class="mb-3"><a href="#!"><i class="fas fa-mobile-alt display-25 me-3 text-secondary"></i>+012 (345) 6789</a></li>
                         <li><a href="#!"><i class="fas fa-map-marker-alt display-25 me-3 text-secondary"></i>205 Main Street, USA</a></li>

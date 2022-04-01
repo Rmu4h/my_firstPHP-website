@@ -16,6 +16,7 @@ class SignupContr {
 
   private function emptyInput() {
     $result;
+
     if (empty($this->$uid) || empty($this->$pwd) || empty($this->$pwdRepeat) || empty($this->$emailadress)) {
       $result = false;
     } else {
@@ -26,6 +27,7 @@ class SignupContr {
 
   private function invalidUid() {
     $result;
+
     if (!preg_match("/^[a-zA-Z0-9]*$/", $this->uid)) {
       $result = false;
     } else {
@@ -36,6 +38,7 @@ class SignupContr {
 
   private function invalidEmail() {
     $result;
+
     if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
       $result = false;
     } else {
@@ -46,6 +49,7 @@ class SignupContr {
 
   private function pwdMatch() {
     $result;
+
     if ($this->pwd !== $this->pwdRepeat)) {
       $result = false;
     } else {

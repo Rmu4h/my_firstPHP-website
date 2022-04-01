@@ -76,12 +76,9 @@ function getUserImage() {
     $result = "";
     if (!empty($_SESSION["userid"])) {
         $userId  = $_SESSION["userid"];
-//        return false;
         $result = $conn->query("SELECT image FROM users WHERE usersId = '$userId'")->fetch_array()['image'];
     }
 
-//    var_dump($result);
-//    die;
     return $result;
 }
 

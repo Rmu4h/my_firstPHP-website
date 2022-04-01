@@ -33,8 +33,6 @@
                     echo "<li><a href='login.php' class='header__link'>Log in</a></li>";
                 }
                 ?>
-<!--                <li><a href="signup.php" class="header__link">Sign up</a></li>-->
-<!--                <li><a href="login.php" class="header__link "">Log in</a></li>-->
             </ul>
         </nav>
     </div>
